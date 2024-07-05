@@ -1420,6 +1420,47 @@ CONTACT PAGE
   opacity: 1;
 }
 
+
+/*----------------------------------
+ FOR LOGO SECTION
+-----------------------------------*/
+
+.image-container111 {
+  display: flex;
+  flex-wrap: wrap; /* This allows boxes to wrap on smaller screens */
+  justify-content: space-between; /* Distributes boxes evenly */
+  margin: 20px; /* Add some margin for spacing */
+}
+
+.image-container111 img {
+  width: 25%; /* Each image takes up 25% of the container width */
+  height: 200px; /* Set a fixed height for consistent size */
+  object-fit: cover; /* Ensures images maintain aspect ratio and fill the box */
+}
+
+.image-container111 img {
+  width: 25%; /* Each image takes up 25% of the container width */
+  height: 200px; /* Set a fixed height for consistent size */
+  object-fit: contain; /* Ensures images fit within the box without clipping */
+}
+/* Media Queries for additional responsiveness (optional) */
+
+@media (max-width: 768px) {
+  .image-container111 img {
+    width: 50%; /* Adjust image width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container111 img {
+    width: 100%; /* Images stack vertically on very small screens */
+    margin: 5%;
+  }
+}
+
+
+
+
 /*----------------------------------
     MEDIUM LAYOUT: 1280px
 -----------------------------------*/
