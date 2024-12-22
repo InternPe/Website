@@ -1383,6 +1383,25 @@ CONTACT PAGE
 .current-year {
   color: #21c87a !important;
 }
+/*-----------------------------
+WHATSAPP
+--------------------------------*/
+
+.whatsapp-box{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.whatsapp{
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  left: 0;
+  border-radius: 50%;
+  z-index: 2;
+bottom: 60px;
+
+}
 
 /*-----------------------------
  SCROLL TO TOP
