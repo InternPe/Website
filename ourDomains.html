@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Available Domains</title>
 
 <style>
@@ -119,53 +119,6 @@
             font-size:32px;
         }
     }
-
-    /* ---------- Tablet View ---------- */
-@media (max-width: 1024px) {
-    .domains-grid{
-        grid-template-columns:repeat(2, 1fr);
-        gap:24px;
-    }
-
-    .domain-card{
-        padding:40px 25px;
-    }
-
-    .icon{
-        font-size:46px;
-    }
-
-    .domain-card h3{
-        font-size:22px;
-    }
-}
-
-
-    /* 🔥 FORCE MOBILE SINGLE COLUMN */
-@media screen and (max-width: 768px) {
-    .domains-grid{
-        grid-template-columns: 1fr !important;
-        gap: 18px;
-    }
-
-    .domain-card{
-        width: 100%;
-        max-width: 100%;
-        padding: 32px 20px;
-    }
-}
-
-/* Extra small devices */
-@media screen and (max-width: 480px) {
-    .domains-grid{
-        grid-template-columns: 1fr !important;
-    }
-
-    .domain-card{
-        padding: 28px 18px;
-    }
-}
-
 </style>
 </head>
 
@@ -298,6 +251,3 @@ function copyCode(id){
 
 </body>
 </html>
-
-
-
