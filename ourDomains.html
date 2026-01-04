@@ -139,31 +139,29 @@
     }
 }
 
-/* ---------- Mobile View ---------- */
-@media (max-width: 600px) {
-    .domains-grid{
-        grid-template-columns:1fr;
-        gap:20px;
-    }
 
-    .domains-section{
-        padding:40px 15px;
+    /* 🔥 FORCE MOBILE SINGLE COLUMN */
+@media screen and (max-width: 768px) {
+    .domains-grid{
+        grid-template-columns: 1fr !important;
+        gap: 18px;
     }
 
     .domain-card{
-        padding:30px 18px;
+        width: 100%;
+        max-width: 100%;
+        padding: 32px 20px;
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+    .domains-grid{
+        grid-template-columns: 1fr !important;
     }
 
-    .icon{
-        font-size:40px;
-    }
-
-    .domain-card h3{
-        font-size:20px;
-    }
-
-    .code-box{
-        font-size:13px;
+    .domain-card{
+        padding: 28px 18px;
     }
 }
 
@@ -299,4 +297,5 @@ function copyCode(id){
 
 </body>
 </html>
+
 
