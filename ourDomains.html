@@ -118,6 +118,55 @@
             font-size:32px;
         }
     }
+
+    /* ---------- Tablet View ---------- */
+@media (max-width: 1024px) {
+    .domains-grid{
+        grid-template-columns:repeat(2, 1fr);
+        gap:24px;
+    }
+
+    .domain-card{
+        padding:40px 25px;
+    }
+
+    .icon{
+        font-size:46px;
+    }
+
+    .domain-card h3{
+        font-size:22px;
+    }
+}
+
+/* ---------- Mobile View ---------- */
+@media (max-width: 600px) {
+    .domains-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .domains-section{
+        padding:40px 15px;
+    }
+
+    .domain-card{
+        padding:30px 18px;
+    }
+
+    .icon{
+        font-size:40px;
+    }
+
+    .domain-card h3{
+        font-size:20px;
+    }
+
+    .code-box{
+        font-size:13px;
+    }
+}
+
 </style>
 </head>
 
@@ -250,3 +299,4 @@ function copyCode(id){
 
 </body>
 </html>
+
