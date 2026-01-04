@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Available Domains</title>
+
+<style>
+    body{
+        margin:0;
+        font-family:"Segoe UI", Tahoma, Arial, sans-serif;
+        background:#f4f6f8;
+    }
+
+    .domains-section{
+        padding:60px 20px;
+        background:linear-gradient(135deg,#4f7cff,#2dd4bf);
+        color:#fff;
+        text-align:center;
+    }
+
+    .domains-section h1{
+        font-size:40px;
+        margin-bottom:10px;
+    }
+
+    .domains-section p{
+        font-size:16px;
+        opacity:0.9;
+        margin-bottom:50px;
+    }
+
+    .domains-grid{
+        max-width:1200px;
+        margin:auto;
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+        gap:30px;
+    }
+
+    .domain-card{
+        background:rgba(255,255,255,0.15);
+        padding:35px 20px;
+        border-radius:16px;
+        transition:0.3s ease;
+        backdrop-filter:blur(8px);
+    }
+
+    .domain-card:hover{
+        transform:translateY(-8px);
+        background:rgba(255,255,255,0.25);
+    }
+
+    .icon{
+        font-size:42px;
+        margin-bottom:18px;
+    }
+
+    a{
+        text-decoration:none;
+        color:white;
+    }
+
+    .domain-card h3{
+        font-size:20px;
+        margin-bottom:8px;
+    }
+
+    .code-box{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:8px;
+        margin-top:10px;
+        font-size:14px;
+        letter-spacing:1px;
+        opacity:0.9;
+    }
+
+    .copy-btn{
+        background:rgba(255,255,255,0.25);
+        border:none;
+        color:white;
+        padding:4px 10px;
+        border-radius:6px;
+        cursor:pointer;
+        font-size:12px;
+        transition:0.3s;
+    }
+
+    .copy-btn:hover{
+        background:rgba(255,255,255,0.4);
+    }
+
+    /* Toast Notification */
+    .toast{
+        position:fixed;
+        bottom:30px;
+        right:30px;
+        background:linear-gradient(135deg,#22c55e,#16a34a);
+        color:#fff;
+        padding:14px 20px;
+        border-radius:10px;
+        font-size:14px;
+        box-shadow:0 10px 25px rgba(0,0,0,0.25);
+        opacity:0;
+        transform:translateY(20px);
+        transition:all 0.4s ease;
+        z-index:9999;
+    }
+
+    .toast.show{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    @media(max-width:600px){
+        .domains-section h1{
+            font-size:32px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<section class="domains-section">
+    <h1>Available Domains</h1>
+    <p>Choose your domain and start your internship journey with us.</p>
+
+    <div class="domains-grid">
+
+        <div class="domain-card">
+            <div class="icon">🖥️</div>
+            <h3><a href="https://internpe.in/ApplyInternship.html">Web Development</a></h3>
+            <div class="code-box">
+                <span id="c1">IPWD742</span>
+                <button class="copy-btn" onclick="copyCode('c1')">Copy</button>
+            </div>
+        </div>
+
+        <div class="domain-card">
+            <div class="icon">⚙️</div>
+            <h3><a href="https://internpe.in/ApplyInternship.html">C++ Programming</a></h3>
+            <div class="code-box">
+                <span id="c2">IPCPP315</span>
+                <button class="copy-btn" onclick="copyCode('c2')">Copy</button>
+            </div>
+        </div>
+
+        <div class="domain-card">
+            <div class="icon">☕</div>
+            <h3><a href="https://internpe.in/ApplyInternship.html">Java Programming</a></h3>
+            <div class="code-box">
+                <span id="c3">IPJAVA684</span>
+                <button class="copy-btn" onclick="copyCode('c3')">Copy</button>
+            </div>
+        </div>
+
+        <div class="domain-card">
+            <div class="icon">🐍</div>
+            <h3><a href="https://internpe.in/ApplyInternship.html">Python Programming</a></h3>
+            <div class="code-box">
+                <span id="c4">IPPY927</span>
+                <button class="copy-btn" onclick="copyCode('c4')">Copy</button>
+            </div>
+        </div>
+
+        <div class="domain-card">
+            <div class="icon">📊</div>
+            <h3><a href="https://internpe.in/ApplyInternship.html">DSA in C++</a></h3>
+            <div class="code-box">
+                <span id="c5">IPDSA558</span>
+                <button class="copy-btn" onclick="copyCode('c5')">Copy</button>
+            </div>
+        </div>
+
+        <div class="domain-card">
+            <div class="icon">🤖</div>
+            <h3><a href="https://internpe.in/ApplyInternship.html">AI / ML</a></h3>
+            <div class="code-box">
+                <span id="c6">IPAI902</span>
+                <button class="copy-btn" onclick="copyCode('c6')">Copy</button>
+            </div>
+        </div>
+
+        <div class="domain-card">
+            <div class="icon">🎨</div>
+            <h3><a href="https://internpe.in/ApplyInternship.html">UI / UX</a></h3>
+            <div class="code-box">
+                <span id="c7">IPUIX441</span>
+                <button class="copy-btn" onclick="copyCode('c7')">Copy</button>
+            </div>
+        </div>
+
+        <div class="domain-card">
+            <div class="icon">📢</div>
+            <h3><a href="https://internpe.in/ApplyInternship.html">Digital Marketing</a></h3>
+            <div class="code-box">
+                <span id="c8">IPDM639</span>
+                <button class="copy-btn" onclick="copyCode('c8')">Copy</button>
+            </div>
+        </div>
+
+        <div class="domain-card">
+            <div class="icon">👥</div>
+            <h3><a href="https://internpe.in/ApplyInternship.html">Human Resources (HR)</a></h3>
+            <div class="code-box">
+                <span id="c9">IPHR817</span>
+                <button class="copy-btn" onclick="copyCode('c9')">Copy</button>
+            </div>
+        </div>
+
+        <div class="domain-card">
+            <div class="icon">🔐</div>
+            <h3><a href="https://internpe.in/ApplyInternship.html">Cybersecurity</a></h3>
+            <div class="code-box">
+                <span id="c10">IPCYB661</span>
+                <button class="copy-btn" onclick="copyCode('c10')">Copy</button>
+            </div>
+        </div>
+
+        <div class="domain-card">
+            <div class="icon">💰</div>
+            <h3><a href="https://internpe.in/ApplyInternship.html">Finance</a></h3>
+            <div class="code-box">
+                <span id="c11">IPFIN489</span>
+                <button class="copy-btn" onclick="copyCode('c11')">Copy</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Toast -->
+<div id="toast" class="toast">✅ Domain code copied!</div>
+
+<script>
+function copyCode(id){
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text);
+
+    const toast = document.getElementById("toast");
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2500);
+}
+</script>
+
+</body>
+</html>
