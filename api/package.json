@@ -1,0 +1,19 @@
+{
+  "name": "netlify-student-functions",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "mongodb": "^6.5.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@netlify/functions": "^2.6.0",
+    "@types/node": "^20.0.0",
+    "netlify-cli": "^17.0.0",
+    "typescript": "^5.4.0"
+  }
+}
