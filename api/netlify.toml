@@ -1,0 +1,14 @@
+[build]
+  functions = "netlify/functions"
+
+# POST /api/upload-students
+[[redirects]]
+  from   = "/api/upload-students"
+  to     = "/.netlify/functions/upload-students"
+  status = 200
+
+# GET /api/student?id=72581
+[[redirects]]
+  from   = "/api/student"
+  to     = "/.netlify/functions/get-student"
+  status = 200
