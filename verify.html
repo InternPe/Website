@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Verify Internship | Internpe</title>
+
+        <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="plugins/animate-css/animate.css" />
+        <link rel="stylesheet" href="plugins/fontawesome/css/all.css" />
+        <link rel="stylesheet" href="plugins/fonts/Pe-icon-7-stroke.css" />
+        <link rel="stylesheet" href="plugins/themify/css/themify-icons.css" />
+        <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css" />
+        <link
+            rel="stylesheet"
+            href="plugins/slick-carousel/slick/slick-theme.css"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+        <style>
+            .verify-section {
+                min-height: 70vh;
+                padding: 80px 0;
+                background: #f8f9fa;
+            }
+            .verify-card {
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+                padding: 30px;
+            }
+            #verifyBtn {
+                font-size: 1rem;
+                font-weight: 600;
+                line-height: 2;
+                padding: 0.375rem 0.75rem;
+            }
+            .status-msg {
+                min-height: 24px;
+                margin-top: 12px;
+                font-weight: 500;
+            }
+            .table-wrap {
+                margin-top: 24px;
+                display: none;
+            }
+        </style>
+    </head>
+    <body id="top-header">
+        <div id="page-loader">
+            <div class="loader-icon fa fa-spin colored-border"></div>
+        </div>
+
+        <div class="top-bar bg-dark py-2 py-md-0" id="top-bar">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div
+                            class="top-bar-left text-white text-md-left text-sm-center"
+                        >
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="ml-2">Jaipur-Rajasthan-India</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 ml-lg-auto col-md-6">
+                        <ul
+                            class="list-inline list-unstyled header-socials text-md-right text-sm-center"
+                        >
+                            <li class="list-inline-item">
+                                <a
+                                    href="https://instagram.com/internpe2022?igshid=YmMyMTA2M2Y="
+                                    target="_blank"
+                                    ><i class="fab fa-instagram"></i
+                                ></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a
+                                    href="https://t.me/internshipinto"
+                                    target="_blank"
+                                    ><i class="fab fa-telegram"></i
+                                ></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a
+                                    href="https://www.linkedin.com/company/internpe/?viewAsMember=true"
+                                    target="_blank"
+                                    ><i class="fab fa-linkedin"></i
+                                ></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logo-bar d-none d-md-block d-lg-block bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="logo d-none d-lg-block">
+                            <a
+                                class="navbar-brand js-scroll-trigger"
+                                href="index.html"
+                            >
+                                <h2 class="mb-0">Internpe Edu</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="col-lg-8 justify-content-end ml-lg-auto d-flex col-12 col-md-12 justify-content-md-center"
+                    >
+                        <div class="top-info-block d-inline-flex">
+                            <div class="icon-block">
+                                <i class="ti-mobile"></i>
+                            </div>
+                            <div class="info-block">
+                                <h5 class="font-weight-500">
+                                    +91 9782563594 / 8696563594
+                                </h5>
+                                <p>Call Us / Whatsapp Us</p>
+                            </div>
+                        </div>
+
+                        <div class="top-info-block d-inline-flex">
+                            <div class="icon-block">
+                                <i class="ti-email"></i>
+                            </div>
+                            <div class="info-block">
+                                <h5 class="font-weight-500">HR@internpe.in</h5>
+                                <p>Email Us</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-navigation" id="mainmenu-area">
+            <div class="container">
+                <nav
+                    class="navbar navbar-expand-lg navbar-dark bg-primary main-nav navbar-togglable rounded-radius"
+                >
+                    <a class="navbar-brand d-lg-none d-block" href="index.html">
+                        <h4 class="h3 mb-0">InternPE Edu</h4>
+                    </a>
+
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="fa fa-bars"></span>
+                    </button>
+
+                    <div
+                        class="collapse navbar-collapse has-dropdown"
+                        id="navbarCollapse"
+                    >
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    href="#!"
+                                    id="navbarWelcome"
+                                    role="button"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    href="about.html"
+                                    class="nav-link js-scroll-trigger"
+                                    >About</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    href="service.html"
+                                    class="nav-link js-scroll-trigger"
+                                    >Services</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact.html" class="nav-link"
+                                    >Contact</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="ApplyInternship.html" class="nav-link"
+                                    >Apply For Internship</a
+                                >
+                            </li>
+                            <li class="nav-item active">
+                                <a href="verify.html" class="nav-link"
+                                    >Verify Now</a
+                                >
+                            </li>
+                        </ul>
+
+                        <ul class="ml-lg-auto list-unstyled m-0">
+                            <li>
+                                <a
+                                    href="contact.html"
+                                    class="btn btn-white btn-circled"
+                                    >Get a quote</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <section class="verify-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="verify-card">
+                            <h2 class="mb-3">Internship Verification</h2>
+                            <p class="mb-4">
+                                Enter your ID number (example: 12345) to verify
+                                details.
+                            </p>
+
+                            <form id="verifyForm" class="mb-2">
+                                <div class="form-row align-items-end">
+                                    <div class="col-md-8 mb-3 mb-md-0">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    value="IPI#"
+                                                    disabled
+                                                    aria-label="ID prefix"
+                                                    style="max-width: 80px"
+                                                />
+                                            </div>
+                                            <input
+                                                id="studentId"
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="12345"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button
+                                            id="verifyBtn"
+                                            type="submit"
+                                            class="btn btn-primary btn-block"
+                                        >
+                                            Verify
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div id="statusMsg" class="status-msg"></div>
+
+                            <div
+                                id="tableWrap"
+                                class="table-wrap table-responsive"
+                            >
+                                <table class="table table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Domain</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Total Weeks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="resultBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="section" id="footer">
+            <div class="overlay footer-overlay"></div>
+            <div class="container">
+                <div class="row justify-content-start">
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="footer-widget">
+                            <a href="index.html" class="footer-brand text-white"
+                                >InternPe Edu</a
+                            >
+                            <p>
+                                We are a organisation which aims to spread
+                                knowledge in very efficient way.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 ml-lg-auto col-sm-12">
+                        <div class="footer-widget"></div>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-6">
+                        <div class="footer-widget">
+                            <h3>About</h3>
+                            <ul class="footer-links">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="service.html">Services</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-6">
+                        <div class="footer-widget">
+                            <h3>Socials</h3>
+                            <ul class="list-unstyled footer-links">
+                                <li>
+                                    <a
+                                        href="https://instagram.com/internpe2022?igshid=Yzg5MTU1MDY="
+                                        target="_blank"
+                                        ><i class="fab fa-instagram"></i
+                                        >Instagram</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://t.me/internshipinto"
+                                        target="_blank"
+                                        ><i class="fab fa-telegram"></i
+                                        >Telegram</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.linkedin.com/company/internpe/"
+                                        target="_blank"
+                                        ><i class="fab fa-linkedin"></i
+                                        >linkedin</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <a
+                    href="https://chat.whatsapp.com/GJHYvz4GC6N5JokdiMKN6r"
+                    target="_blank"
+                    style="
+                        position: fixed;
+                        right: 20px;
+                        top: 200px;
+                        background-color: #25d366;
+                        color: white;
+                        width: 55px;
+                        height: 55px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-decoration: none;
+                        font-size: 20px;
+                        font-weight: bold;
+                        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+                    "
+                    onmouseover="
+                        document.getElementById('wptext').style.display =
+                            'block'
+                    "
+                    onmouseout="
+                        document.getElementById('wptext').style.display = 'none'
+                    "
+                >
+                    <span style="margin-right: 1px">W</span>
+                    <svg
+                        style="width: 16px; height: 16px; fill: white"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
+                        />
+                    </svg>
+                    <sup
+                        style="
+                            font-size: 9px;
+                            margin-left: 1px;
+                            margin-top: -6px;
+                        "
+                        >+</sup
+                    >
+                </a>
+
+                <div
+                    id="wptext"
+                    style="
+                        position: fixed;
+                        right: 10px;
+                        top: 235px;
+                        background-color: #000;
+                        color: white;
+                        padding: 5px 10px;
+                        border-radius: 6px;
+                        font-size: 12px;
+                        display: none;
+                        font-family: Arial;
+                    "
+                >
+                    Join WhatsApp Group
+                </div>
+
+                <div class="whatsapp-box">
+                    <a href="https://wa.link/8ttd96" target="_blank"
+                        ><img
+                            class="whatsapp"
+                            src="./whatsapp.png"
+                            alt="whatsapp image"
+                    /></a>
+                </div>
+
+                <div class="row text-right pt-5">
+                    <div class="col-lg-12">
+                        <div class="overflow-hidden">
+                            <p class="footer-copy">
+                                Copyright &copy;
+                                <script>
+                                    var CurrentYear = new Date().getFullYear();
+                                    document.write(CurrentYear);
+                                </script>
+                                . Designed &amp; Developed by
+                                <a
+                                    class="current-year"
+                                    href="https://www.linkedin.com/company/internpe/"
+                                    >InternPe</a
+                                >
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <a
+            id="scroll-to-top"
+            class="scroll-to-top js-scroll-trigger"
+            href="#top-header"
+        >
+            <i class="fa fa-angle-up"></i>
+        </a>
+
+        <script>
+            (function () {
+                var API_BASE =
+                    "https://internpe.netlify.app/.netlify/functions/get-student";
+                var form = document.getElementById("verifyForm");
+                var input = document.getElementById("studentId");
+                var statusMsg = document.getElementById("statusMsg");
+                var tableWrap = document.getElementById("tableWrap");
+                var resultBody = document.getElementById("resultBody");
+                var verifyBtn = document.getElementById("verifyBtn");
+
+                function escapeHtml(value) {
+                    return String(value)
+                        .replace(/&/g, "&amp;")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/\"/g, "&quot;")
+                        .replace(/'/g, "&#039;");
+                }
+
+                function setStatus(text, isError) {
+                    statusMsg.textContent = text;
+                    statusMsg.style.color = isError ? "#c82333" : "#155724";
+                }
+
+                form.addEventListener("submit", async function (event) {
+                    event.preventDefault();
+
+                    var raw = input.value.trim();
+                    if (!raw) {
+                        setStatus("Please enter your IPI# ID.", true);
+                        tableWrap.style.display = "none";
+                        return;
+                    }
+
+                    var numericId = raw.replace(/^IPI#/i, "").trim();
+                    if (!/^\d+$/.test(numericId)) {
+                        setStatus(
+                            "Invalid ID format. Use IPI# followed by digits.",
+                            true,
+                        );
+                        tableWrap.style.display = "none";
+                        return;
+                    }
+
+                    verifyBtn.disabled = true;
+                    setStatus("Verifying...", false);
+                    tableWrap.style.display = "none";
+                    resultBody.innerHTML = "";
+
+                    try {
+                        var response = await fetch(
+                            API_BASE + "?id=" + encodeURIComponent(numericId),
+                        );
+                        var data = await response.json();
+
+                        if (!response.ok) {
+                            throw new Error(
+                                data && data.error
+                                    ? data.error
+                                    : "Verification failed.",
+                            );
+                        }
+
+                        resultBody.innerHTML =
+                            "<tr>" +
+                            "<td>" +
+                            escapeHtml(data.id || "") +
+                            "</td>" +
+                            "<td>" +
+                            escapeHtml(data.name || "") +
+                            "</td>" +
+                            "<td>" +
+                            escapeHtml(data.domain || "") +
+                            "</td>" +
+                            "<td>" +
+                            escapeHtml(data.startDate || "") +
+                            "</td>" +
+                            "<td>" +
+                            escapeHtml(data.endDate || "") +
+                            "</td>" +
+                            "<td>" +
+                            escapeHtml(data.totalWeeks || "") +
+                            "</td>" +
+                            "</tr>";
+
+                        tableWrap.style.display = "block";
+                        setStatus("Verification successful.", false);
+                    } catch (error) {
+                        setStatus(
+                            error.message || "Something went wrong.",
+                            true,
+                        );
+                        tableWrap.style.display = "none";
+                    } finally {
+                        verifyBtn.disabled = false;
+                    }
+                });
+            })();
+        </script>
+
+        <script src="plugins/jquery/jquery.min.js"></script>
+        <script src="plugins/bootstrap/bootstrap.min.js"></script>
+        <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
+        <script src="plugins/google-map/gmap.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "netlify dev",
+    "deploy": "netlify deploy --prod",
     "build": "tsc"
   },
   "dependencies": {
