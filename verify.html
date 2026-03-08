@@ -283,7 +283,7 @@
                                             <th>Domain</th>
                                             <th>Start Date</th>
                                             <th>End Date</th>
-                                            <th>Total Weeks</th>
+                                            <th>Total Duration</th>
                                         </tr>
                                     </thead>
                                     <tbody id="resultBody"></tbody>
@@ -493,7 +493,7 @@
 
                     var raw = input.value.trim();
                     if (!raw) {
-                        setStatus("Please enter your IPI# ID.", true);
+                        setStatus("Please enter your ID number.", true);
                         tableWrap.style.display = "none";
                         return;
                     }
@@ -501,7 +501,7 @@
                     var numericId = raw.replace(/^IPI#/i, "").trim();
                     if (!/^\d+$/.test(numericId)) {
                         setStatus(
-                            "Invalid ID format. Use IPI# followed by digits.",
+                            "Invalid ID format. Enter digits only.",
                             true,
                         );
                         tableWrap.style.display = "none";
@@ -545,7 +545,7 @@
                             escapeHtml(data.endDate || "") +
                             "</td>" +
                             "<td>" +
-                            escapeHtml(data.totalWeeks || "") +
+                            escapeHtml(data.duration || "") +
                             "</td>" +
                             "</tr>";
 

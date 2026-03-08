@@ -10,7 +10,7 @@ interface StudentDocument {
   domain: string;
   startDate: string;
   endDate: string;
-  totalWeeks: number;
+  duration: string;
 }
 
 interface StudentResponse {
@@ -19,7 +19,7 @@ interface StudentResponse {
   domain: string;
   startDate: string;
   endDate: string;
-  totalWeeks: number;
+  duration: string;
 }
 
 // ─── DB Connection ────────────────────────────────────────────────────────────
@@ -106,7 +106,7 @@ export const handler: Handler = async (event) => {
       domain: student.domain,
       startDate: student.startDate,
       endDate: student.endDate,
-      totalWeeks: student.totalWeeks,
+      duration: student.duration,
     };
 
     return {

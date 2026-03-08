@@ -10,7 +10,7 @@ interface StudentRow {
   Domain: string;
   "Start Date": string | number;
   "End Date": string | number;
-  "Total Weeks": string | number;
+  Duration: string | number;
 }
 
 interface StudentDocument {
@@ -20,7 +20,7 @@ interface StudentDocument {
   domain: string;
   startDate: string; // ISO date string
   endDate: string;
-  totalWeeks: number;
+  duration: string;
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -38,14 +38,55 @@ async function connectDB(): Promise<Db> {
   return cachedDb;
 }
 
-/** Parse Excel serial number OR regular date string → ISO date string */
-function parseDate(value: string | number): string {
-  if (typeof value === "number") {
-    // Excel serial date → JS Date
-    const date = XLSX.SSF.parse_date_code(value);
-    return new Date(date.y, date.m - 1, date.d).toISOString().split("T")[0];
+function toISODate(date: Date): string | null {
+  if (Number.isNaN(date.getTime())) return null;
+  return date.toISOString().split("T")[0];
+}
+
+/** Parse Excel serial/date string into ISO; throws detailed row/field errors */
+function parseDate(
+  value: string | number | undefined,
+  field: "Start Date" | "End Date",
+  rowNumber: number,
+): string {
+  if (value === undefined || value === null || String(value).trim() === "") {
+    throw new Error(`Row ${rowNumber}: Missing ${field}.`);
   }
-  return new Date(value).toISOString().split("T")[0];
+
+  if (typeof value === "number") {
+    const parsed = XLSX.SSF.parse_date_code(value);
+    if (!parsed) {
+      throw new Error(
+        `Row ${rowNumber}: Invalid ${field} serial value "${value}".`,
+      );
+    }
+    const iso = toISODate(new Date(Date.UTC(parsed.y, parsed.m - 1, parsed.d)));
+    if (!iso) {
+      throw new Error(
+        `Row ${rowNumber}: Invalid ${field} serial value "${value}".`,
+      );
+    }
+    return iso;
+  }
+
+  const raw = String(value).trim();
+  const dmy = raw.match(/^(\d{1,2})[/-](\d{1,2})[/-](\d{4})$/);
+  if (dmy) {
+    const day = Number(dmy[1]);
+    const month = Number(dmy[2]);
+    const year = Number(dmy[3]);
+    const iso = toISODate(new Date(Date.UTC(year, month - 1, day)));
+    if (!iso) {
+      throw new Error(`Row ${rowNumber}: Invalid ${field} value "${raw}".`);
+    }
+    return iso;
+  }
+
+  const iso = toISODate(new Date(raw));
+  if (!iso) {
+    throw new Error(`Row ${rowNumber}: Invalid ${field} value "${raw}".`);
+  }
+  return iso;
 }
 
 /** Extract numeric ID from "IPI#72581" → "72581" */
@@ -123,21 +164,51 @@ export const handler: Handler = async (event) => {
       };
     }
 
-    // 3. Map rows → documents
-    const documents: StudentDocument[] = rows.map((row) => {
-      const fullId = String(row["ID"]).trim();
-      const numericId = extractNumericId(fullId);
+    // 3. Validate/map rows → documents
+    const documents: StudentDocument[] = [];
+    const rowErrors: string[] = [];
 
-      return {
-        _id: numericId,
-        fullId,
-        name: String(row["Name"]).trim(),
-        domain: String(row["Domain"]).trim(),
-        startDate: parseDate(row["Start Date"]),
-        endDate: parseDate(row["End Date"]),
-        totalWeeks: Number(row["Total Weeks"]) || 0,
-      };
+    rows.forEach((row, idx) => {
+      const rowNumber = idx + 2; // +2 to account for 1-indexed sheet row + header row
+      try {
+        const fullId = String(row["ID"] ?? "").trim();
+        if (!fullId) throw new Error(`Row ${rowNumber}: Missing ID.`);
+
+        const numericId = extractNumericId(fullId);
+        if (!/^\d+$/.test(numericId)) {
+          throw new Error(`Row ${rowNumber}: Invalid ID "${fullId}".`);
+        }
+
+        const name = String(row["Name"] ?? "").trim();
+        const domain = String(row["Domain"] ?? "").trim();
+        if (!name) throw new Error(`Row ${rowNumber}: Missing Name.`);
+        if (!domain) throw new Error(`Row ${rowNumber}: Missing Domain.`);
+
+        documents.push({
+          _id: numericId,
+          fullId,
+          name,
+          domain,
+          startDate: parseDate(row["Start Date"], "Start Date", rowNumber),
+          endDate: parseDate(row["End Date"], "End Date", rowNumber),
+          duration: String(row["Duration"] ?? "").trim(),
+        });
+      } catch (error: any) {
+        rowErrors.push(error?.message ?? `Row ${rowNumber}: Invalid data.`);
+      }
     });
+
+    if (rowErrors.length) {
+      return {
+        statusCode: 400,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          error: "Invalid rows in uploaded file.",
+          issues: rowErrors.slice(0, 10),
+          totalIssues: rowErrors.length,
+        }),
+      };
+    }
 
     // 4. Upsert into MongoDB (replace if ID already exists)
     const db = await connectDB();
