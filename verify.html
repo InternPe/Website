@@ -488,6 +488,17 @@
                     statusMsg.style.color = isError ? "#c82333" : "#155724";
                 }
 
+                function formatDateDDMMYYYY(value) {
+                    var raw = String(value || "").trim();
+                    var isoMatch = raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+                    if (isoMatch) {
+                        return (
+                            isoMatch[3] + "-" + isoMatch[2] + "-" + isoMatch[1]
+                        );
+                    }
+                    return raw;
+                }
+
                 form.addEventListener("submit", async function (event) {
                     event.preventDefault();
 
@@ -539,10 +550,10 @@
                             escapeHtml(data.domain || "") +
                             "</td>" +
                             "<td>" +
-                            escapeHtml(data.startDate || "") +
+                            escapeHtml(formatDateDDMMYYYY(data.startDate)) +
                             "</td>" +
                             "<td>" +
-                            escapeHtml(data.endDate || "") +
+                            escapeHtml(formatDateDDMMYYYY(data.endDate)) +
                             "</td>" +
                             "<td>" +
                             escapeHtml(data.duration || "") +
