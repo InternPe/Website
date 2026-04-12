@@ -260,6 +260,37 @@
             transform: rotate(-45deg) translate(5px, -5px);
         }
 
+
+/* WhatsApp Buttons */
+.whatsapp-btn {
+  background: #25D366;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
+
+.whatsapp-btn.outline {
+  background: transparent;
+  border: 2px solid #25D366;
+  color: #25D366;
+}
+
+.whatsapp-btn.outline:hover {
+  background: #25D366;
+  color: #fff;
+}
+
+        
         /* Mobile Menu */
         .mobile-menu {
             position: fixed;
@@ -1685,6 +1716,23 @@
         </div>
     </section>
 
+<!-- whatsapp section -->
+<div class="contact-cta">
+
+  <div class="call-box">
+    <i class="fas fa-phone-alt"></i>
+    <span>+91 9782563594</span>
+  </div>
+
+  <a href="https://chat.whatsapp.com/LRTwL0aSY2BIjObgojFiN3" target="_blank" class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i> Join Internship Group
+  </a>
+
+  <a href="https://api.whatsapp.com/send?phone=919982563594&text=Hi%20InternPe%2C%0A%0AI%20would%20like%20to%20know%20about%20the%20available%20internship%20opportunities.%0AKindly%20provide%20me%20with%20the%20details.%0A%0AThank%20you!" target="_blank" class="whatsapp-btn outline">
+    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+  </a>
+
+</div>
 
 
     <!-- Certificates Section -->
