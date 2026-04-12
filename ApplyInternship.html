@@ -736,7 +736,26 @@
   color: #fff;
 }
 
+        .contact-cta {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.whatsapp-btn,
+.call-box {
+  width: auto !important;
+}
 
+        @media (max-width: 768px) {
+  .contact-cta {
+    flex-direction: column;
+  }
+}
+        
+        
         .category-tab:hover {
             border-color: var(--primary);
             color: var(--primary);
