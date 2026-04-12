@@ -1,139 +1,1879 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERNPE IT Solutions - Internship Program</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap)" rel="stylesheet">
+    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    <style>
+        /* CSS Variables for Theming */
+        :root {
+            --primary: #f59e0b;
+            --primary-dark: #d97706;
+            --primary-light: #fbbf24;
 
-<!-- Open Graph Meta Tags -->
-<meta property="og:title" content="InternPe - IT & Training Company">
-<meta property="og:description" content="Apply for internships in Web Development, AI/ML, Data Science and more.">
-<meta property="og:image" content="https://img1.wsimg.com/isteam/stock/pY8WwV7">
-<meta property="og:url" content="https://internpe.in/ApplyInternship.html">
-<meta property="og:type" content="website">
-  
-  <title>Internpe Summer Internship Program</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+             /* --primary: #0bf565;
+            --primary-dark: #06d97e;
+            --primary-light: #24fb6f; */
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --gray-900: #111827;
+            --gray-800: #1f2937;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            --gray-50: #f9fafb;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+            --gradient-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            --shadow-glow: 0 0 40px rgba(245, 158, 11, 0.3);
+            --radius-sm: 8px;
+            --radius: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f7f9fc;
-      color: #333;
-    }
+        /* Reset & Base */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .header {
-      background-color: #1cc88a;
-      padding: 20px 50px;
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-    }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
 
-    .main {
-      min-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--gray-50);
+            color: var(--gray-900);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
 
-    .main h1 {
-      font-size: 32px;
-      margin-bottom: 40px;
-    }
+        /* Selection Style */
+        ::selection {
+            background: var(--primary);
+            color: var(--white);
+        }
 
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-      max-width: 300px;
-    }
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
 
-    .button-container a {
-      text-decoration: none;
-    }
+        ::-webkit-scrollbar-track {
+            background: var(--gray-100);
+        }
 
-    .button {
-      background-color: #1cc88a;
-      color: white;
-      border: none;
-      border-radius: 25px;
-      padding: 12px 0;
-      font-size: 16px;
-      text-align: center;
-      width: 100%;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gray-400);
+            border-radius: var(--radius-full);
+        }
 
-    .button:hover {
-      background-color: #17a673;
-    }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gray-500);
+        }
 
-    @media (max-width: 600px) {
-      .main h1 {
-        font-size: 26px;
-      }
+        /* Utility Classes */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-      .button {
-        font-size: 14px;
-        padding: 10px 0;
-      }
-    }
-  </style>
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 40px;
+            }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--gray-900);
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: none;
+            list-style: none;
+            gap: 8px;
+        }
+
+        @media (min-width: 1024px) {
+            .nav-menu {
+                display: flex;
+            }
+        }
+
+        .nav-menu li a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--gray-700);
+            text-decoration: none;
+            border-radius: var(--radius);
+            transition: var(--transition-fast);
+        }
+
+        .nav-menu li a:hover {
+            background: var(--gray-100);
+            color: var(--gray-900);
+        }
+
+        .nav-menu li a.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .nav-cta {
+            display: none;
+            padding: 12px 24px;
+            background: var(--gradient-dark);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: var(--radius-full);
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        @media (min-width: 768px) {
+            .nav-cta {
+                display: inline-flex;
+            }
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .mobile-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-toggle {
+                display: none;
+            }
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--gray-700);
+            border-radius: var(--radius-full);
+            transition: var(--transition);
+        }
+
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 77px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--white);
+            padding: 24px;
+            transform: translateX(100%);
+            transition: var(--transition);
+            overflow-y: auto;
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mobile-menu-list li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--gray-700);
+            text-decoration: none;
+            border-radius: var(--radius);
+            transition: var(--transition-fast);
+        }
+
+        .mobile-menu-list li a:hover,
+        .mobile-menu-list li a.active {
+            background: var(--gray-100);
+            color: var(--primary);
+        }
+
+        .mobile-menu-cta {
+            display: block;
+            margin-top: 24px;
+            padding: 16px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: var(--radius);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 64px;
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--primary-dark);
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .hero-badge i {
+            font-size: 12px;
+        }
+
+        .hero-title {
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--gray-900);
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease 0.1s both;
+        }
+
+        .hero-title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: var(--gray-600);
+            margin-bottom: 32px;
+            max-width: 540px;
+            animation: fadeInUp 0.6s ease 0.2s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.6s ease 0.3s both;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--gray-500);
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            animation: fadeInUp 0.6s ease 0.4s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            border-radius: var(--radius-full);
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.5);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--gray-700);
+            border: 2px solid var(--gray-200);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInRight 0.8s ease 0.3s both;
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: var(--gradient-dark);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            font-weight: 600;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+            url("i1.png") center/cover;
+            opacity: 0.5;
+        }
+
+        .hero-image i {
+            font-size: 64px;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-card.card-1 {
+            top: 10%;
+            right: -20px;
+            animation-delay: 0s;
+        }
+
+        .floating-card.card-2 {
+            bottom: 15%;
+            left: -20px;
+            animation-delay: 1.5s;
+        }
+
+        .floating-card-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .floating-card-text {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--gray-900);
+        }
+
+        .floating-card-subtext {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Partners Section */
+        .partners {
+            padding: 60px 0;
+            background: var(--white);
+            border-top: 1px solid var(--gray-100);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .partners-label {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 32px;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .partners-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        .partner-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: var(--gray-50);
+            border-radius: var(--radius);
+            border: 1px solid var(--gray-100);
+            transition: var(--transition);
+        }
+
+        .partner-item:hover {
+            background: var(--white);
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .partner-item img {
+            max-height: 36px;
+            opacity: 0.6;
+            transition: var(--transition);
+            filter: grayscale(100%);
+        }
+
+        .partner-item:hover img {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        .partner-placeholder {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Positions Section */
+        .positions {
+            padding: 100px 0;
+            background: var(--gray-50);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 48px;
+        }
+
+        .category-tab {
+            padding: 12px 24px;
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--gray-600);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .category-tab:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .category-tab.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+        }
+
+        .positions-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 640px) {
+            .positions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .positions-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .position-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            border: 1px solid var(--gray-100);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .position-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            transform: scaleY(0);
+            transition: var(--transition);
+        }
+
+        .position-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .position-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .position-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .position-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .position-category {
+            font-size: 13px;
+            color: var(--gray-500);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .position-arrow {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 32px;
+            height: 32px;
+            background: var(--gray-100);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            transition: var(--transition);
+        }
+
+        .position-card:hover .position-arrow {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateX(4px);
+        }
+
+        /* Offers Section */
+        .offers {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .offers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .offers-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .offer-card {
+            background: var(--gray-50);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .offer-card:hover {
+            background: var(--white);
+            border-color: var(--gray-200);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .offer-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+        }
+
+        .offer-title {
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .offer-description {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* Certificates Section */
+        .certificates {
+            padding: 100px 0;
+            background: var(--gradient-dark);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certificates::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='[w3.org](http://www.w3.org/2000/svg)'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .certificates .section-title {
+            color: var(--white);
+        }
+
+        .certificates .section-description {
+            color: var(--gray-400);
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (min-width: 768px) {
+            .certificates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .certificate-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .certificate-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-8px);
+        }
+
+        .certificate-preview {
+            width: 100%;
+            aspect-ratio: 1 / 1.3;
+            background: url(./certificate.png);
+            background-size: cover;
+            border-radius: var(--radius-lg);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .certificate-preview1 {
+            
+            background: url(./OfferLetter.png);
+            background-size: cover;
+            
+        }
+
+        .certificate-preview i {
+            font-size: 48px;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+
+        .certificate-title {
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .certificate-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: rgba(245, 158, 11, 0.2);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--primary-light);
+        }
+
+        /* Apply Section */
+        .apply {
+            padding: 100px 0;
+            background: var(--gray-50);
+        }
+
+        .apply-wrapper {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 60px 40px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .apply-title {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+        }
+
+        .apply-description {
+            font-size: 18px;
+            color: var(--gray-600);
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .duration-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 640px) {
+            .duration-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .duration-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .duration-card {
+            background: var(--gray-50);
+            border: 2px solid var(--gray-100);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .duration-card:hover {
+            border-color: var(--primary);
+            background: var(--white);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .duration-card.popular {
+            border-color: var(--primary);
+            background: var(--white);
+            position: relative;
+        }
+
+        .duration-card.popular::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 4px 16px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+        }
+
+        .duration-weeks {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .duration-label {
+            font-size: 14px;
+            color: var(--gray-500);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .duration-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px 20px;
+            background: var(--gray-900);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .duration-card:hover .duration-btn,
+        .duration-card.popular .duration-btn {
+            background: var(--gradient-primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            color: var(--gray-400);
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+            }
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-brand .logo-text {
+            color: var(--white);
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-socials a {
+            width: 44px;
+            height: 44px;
+            background: var(--gray-800);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            font-size: 18px;
+            transition: var(--transition);
+        }
+
+        .footer-socials a:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-4px);
+        }
+
+        .footer-column h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition-fast);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .footer-copyright {
+            font-size: 13px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition);
+            box-shadow: var(--shadow-lg);
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Animations on Scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    InternPE
-  </div>
 
-  <div class="main">
-    <!-- <h1>Internpe Summer Internship Program</h1> -->
-    <h1>
-  Internpe 
-  <span style="
-    background: linear-gradient(90deg, #ff7a00, #ffcc00);
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    font-weight: 700;
-  ">
-    Summer
-  </span> 
-  Internship Program
-</h1>
-    <div class="button-container">
-        <a href="https://forms.gle/SyMic3WXZVqUZHij6" target="_blank"><div class="button">02 WEEKS</div></a>
-      <a href="https://forms.gle/qGdchmBR17skbocAA" target="_blank"><div class="button">04 WEEKS</div></a>
-      <a href="https://forms.gle/3yQuk9Pprs9SQZzs8" target="_blank"><div class="button">06 WEEKS (45 DAYS)</div></a>
-      <a href="https://forms.gle/ModwF2FP4eciXjvm7" target="_blank"><div class="button">08 WEEKS (2 MONTHS)</div></a>
-      <a href="https://forms.gle/48hC4wRLxSCQBznv6" target="_blank"><div class="button">12 WEEKS (3 MONTHS)</div></a>
-      <a href="https://forms.gle/CDELq4zbALctybCBA" target="_blank"><div class="button">16 WEEKS (4 MONTHS)</div></a>
-<a href="https://forms.gle/8iuXPcGob6fLaeXr7" target="_blank"><div class="button">20 WEEKS (5 MONTHS)</div></a>
-      <a href="https://forms.gle/edpzHt5VdHvmVscy5" target="_blank"><div class="button">24 WEEKS  (6 MONTHS)</div></a>
-        <a href="https://forms.gle/F7hAjD8G9rqBs9No9" target="_blank"><div class="button">SUMMER INTERNSHIP (MAY-AUG)</div></a>
-        <a href="https://forms.gle/MHdK2MeTJBmpgYoA8" target="_blank"><div class="button">INTERNSHIP FOR OUT OF INDIA STUDENTS</div></a>
- <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDz49FlUL0NzbFXpxEdWfC1jEdUkSyE7w-OxRog0TQmTF3Cg/viewform?usp=dialog" target="_blank"><div class="button">INTERNSHIP WITH LIVE CLASSES</div></a>
-      <a href="https://wa.aisensy.com/aab0hc" target="_blank"><div class="button">CHAT WITH US ON WHATSAPP</div></a>
-     <a href="https://chat.whatsapp.com/Hb6gqbco9XrJ7ZxwQ2iTQe" target="_blank"><div class="button">JOIN WHATSAPP GROUP</div></a>
-      <a href="index.html" target="_blank"><div class="button">GO TO HOME PAGE</div></a>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="https://internpe.in/" class="logo">
+                    <div class="logo-icon">IT</div>
+                    <div class="logo-text">INTERN<span>PE</span></div>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="https://internpe.in/" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <!-- <li><a href="#positions"><i class="fas fa-briefcase"></i> Positions</a></li> -->
+                    <!-- <li><a href="#offers"><i class="fas fa-gift"></i> Benefits</a></li> -->
+                    <li><a href="#certificates"><i class="fas fa-certificate"></i> Certificates</a></li>
+                    <li><a href="https://www.trustpilot.com/review/internpe.in" target="_blank"> <i class="fas fa-paper-plane"></i> Internpe Reviews 4.5+⭐ </a></li>
+                </ul>
 
-   
+                <a href="https://internpe.in/verify.html" class="nav-cta">Verify Your Certificate</a>
+
+                <button class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu-list">
+            <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#positions"><i class="fas fa-briefcase"></i> Positions</a></li>
+            <li><a href="#offers"><i class="fas fa-gift"></i> Benefits</a></li>
+            <li><a href="#certificates"><i class="fas fa-certificate"></i> Certificates</a></li>
+            <li><a href="#apply"><i class="fas fa-paper-plane"></i> Apply Now</a></li>
+        </ul>
+        <a href="#apply" class="mobile-menu-cta">Start Your Journey</a>
     </div>
-  </div>
+
+    <!-- Hero Section -->
+    <!-- <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-rocket"></i>
+                        Now Accepting Applications for 2024
+                    </div>
+                    <h1 class="hero-title">
+                        Launch Your Tech Career With <span>INTERNPE</span>
+                    </h1>
+                    <p class="hero-description">
+                        Join our prestigious online internship program. Gain real-world experience, 
+                        build your portfolio, and kickstart your journey in tech with industry experts.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">27+</span>
+                            <span class="stat-label">Tech Domains</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">Interns Trained</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Satisfaction Rate</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#apply" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            Start Internship
+                        </a>
+                        <a href="#positions" class="btn btn-secondary">
+                            <i class="fas fa-search"></i>
+                            Explore Positions
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="floating-card card-1">
+                        <div class="floating-card-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div>
+                            <div class="floating-card-text">QR Verified</div>
+                            <div class="floating-card-subtext">Certificates</div>
+                        </div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <div class="floating-card-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div>
+                            <div class="floating-card-text">Work From Home</div>
+                            <div class="floating-card-subtext">100% Remote</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Partners Section -->
+    <!-- <section class="partners">
+        <div class="container">
+            <p class="partners-label">Certified & Partnered With</p>
+            <div class="partners-grid">
+                <div class="partner-item">
+                    <span class="partner-placeholder">🇮🇳 Gov of India</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-placeholder">MSME</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-placeholder">StartupIndia</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-placeholder">AWS Partner</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-placeholder">Google Partner</span>
+                </div>
+                <div class="partner-item">
+                    <span class="partner-placeholder">ISO 9001</span>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Positions Section -->
+    <!-- <section class="positions" id="positions">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-badge">
+                    <i class="fas fa-briefcase"></i>
+                    Open Positions
+                </span>
+                <h2 class="section-title">Find Your Perfect Role</h2>
+                <p class="section-description">
+                    Choose from 27+ cutting-edge technology domains and start building your future today.
+                </p>
+            </div>
+
+            <div class="category-tabs animate-on-scroll">
+                <button class="category-tab active">All Positions</button>
+                <button class="category-tab">Web Development</button>
+                <button class="category-tab">Programming</button>
+                <button class="category-tab">Data & AI</button>
+                <button class="category-tab">Design</button>
+            </div>
+
+            <div class="positions-grid">
+                <div class="position-card animate-on-scroll">
+                    <div class="position-icon"><i class="fab fa-react"></i></div>
+                    <h3 class="position-name">React.js Developer</h3>
+                    <p class="position-category"><i class="fas fa-tag"></i> Web Development</p>
+                    <div class="position-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="position-card animate-on-scroll">
+                    <div class="position-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3 class="position-name">MERN Stack Developer</h3>
+                    <p class="position-category"><i class="fas fa-tag"></i> Full Stack</p>
+                    <div class="position-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="position-card animate-on-scroll">
+                    <div class="position-icon"><i class="fab fa-python"></i></div>
+                    <h3 class="position-name">Python Developer</h3>
+                    <p class="position-category"><i class="fas fa-tag"></i> Programming</p>
+                    <div class="position-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="position-card animate-on-scroll">
+                    <div class="position-icon"><i class="fas fa-brain"></i></div>
+                    <h3 class="position-name">ML/AI Engineer</h3>
+                    <p class="position-category"><i class="fas fa-tag"></i> Data & AI</p>
+                    <div class="position-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="position-card animate-on-scroll">
+                    <div class="position-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="position-name">Cybersecurity Analyst</h3>
+                    <p class="position-category"><i class="fas fa-tag"></i> Security</p>
+                    <div class="position-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="position-card animate-on-scroll">
+                    <div class="position-icon"><i class="fas fa-cloud"></i></div>
+                    <h3 class="position-name">Cloud Computing</h3>
+                    <p class="position-category"><i class="fas fa-tag"></i> Infrastructure</p>
+                    <div class="position-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="position-card animate-on-scroll">
+                    <div class="position-icon"><i class="fas fa-palette"></i></div>
+                    <h3 class="position-name">UI/UX Designer</h3>
+                    <p class="position-category"><i class="fas fa-tag"></i> Design</p>
+                    <div class="position-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="position-card animate-on-scroll">
+                    <div class="position-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3 class="position-name">App Developer</h3>
+                    <p class="position-category"><i class="fas fa-tag"></i> Mobile</p>
+                    <div class="position-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="position-card animate-on-scroll">
+                    <div class="position-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3 class="position-name">Data Analyst</h3>
+                    <p class="position-category"><i class="fas fa-tag"></i> Data & AI</p>
+                    <div class="position-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="position-card animate-on-scroll">
+                    <div class="position-icon"><i class="fab fa-java"></i></div>
+                    <h3 class="position-name">Java Developer</h3>
+                    <p class="position-category"><i class="fas fa-tag"></i> Programming</p>
+                    <div class="position-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="position-card animate-on-scroll">
+                    <div class="position-icon"><i class="fas fa-cube"></i></div>
+                    <h3 class="position-name">Blockchain Developer</h3>
+                    <p class="position-category"><i class="fas fa-tag"></i> Web3</p>
+                    <div class="position-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="position-card animate-on-scroll">
+                    <div class="position-icon"><i class="fas fa-vial"></i></div>
+                    <h3 class="position-name">Software Tester</h3>
+                    <p class="position-category"><i class="fas fa-tag"></i> QA</p>
+                    <div class="position-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Offers Section -->
+    <!-- <section class="offers" id="offers">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-badge">
+                    <i class="fas fa-gift"></i>
+                    Benefits & Perks
+                </span>
+                <h2 class="section-title">What You'll Get</h2>
+                <p class="section-description">
+                    We're committed to providing you with everything you need to succeed in your tech career.
+                </p>
+            </div>
+
+            <div class="offers-grid">
+                <div class="offer-card animate-on-scroll">
+                    <div class="offer-icon"><i class="fas fa-certificate"></i></div>
+                    <h3 class="offer-title">QR Verified Certificates</h3>
+                    <p class="offer-description">
+                        Receive official offer letters and completion certificates with QR verification, 
+                        recognized across the industry.
+                    </p>
+                </div>
+
+                <div class="offer-card animate-on-scroll">
+                    <div class="offer-icon"><i class="fas fa-home"></i></div>
+                    <h3 class="offer-title">100% Remote Work</h3>
+                    <p class="offer-description">
+                        Work from anywhere, anytime. Our flexible online internship fits your schedule 
+                        and lifestyle perfectly.
+                    </p>
+                </div>
+
+                <div class="offer-card animate-on-scroll">
+                    <div class="offer-icon"><i class="fas fa-clock"></i></div>
+                    <h3 class="offer-title">Flexible Timing</h3>
+                    <p class="offer-description">
+                        Work at your own pace. No fixed hours—just complete your tasks within the 
+                        deadline and learn at your speed.
+                    </p>
+                </div>
+
+                <div class="offer-card animate-on-scroll">
+                    <div class="offer-icon"><i class="fas fa-users"></i></div>
+                    <h3 class="offer-title">Placement Support</h3>
+                    <p class="offer-description">
+                        Get career guidance, resume reviews, and job placement assistance to help 
+                        you land your dream role.
+                    </p>
+                </div>
+
+                <div class="offer-card animate-on-scroll">
+                    <div class="offer-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3 class="offer-title">Interview Training</h3>
+                    <p class="offer-description">
+                        Master interview skills with mock sessions, tips from experts, and 
+                        comprehensive preparation material.
+                    </p>
+                </div>
+
+                <div class="offer-card animate-on-scroll">
+                    <div class="offer-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3 class="offer-title">Real-World Projects</h3>
+                    <p class="offer-description">
+                        Build your portfolio with hands-on industrial projects that demonstrate 
+                        your skills to future employers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+<!-- Apply Section -->
+    <section class="apply" id="apply">
+        <div class="container">
+            <div class="apply-wrapper">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-badge">
+                        <i class="fas fa-paper-plane"></i>
+                        Get Started
+                    </span>
+                    <h2 class="apply-title">Choose Your Duration</h2>
+                    <p class="apply-description">
+                        Select the internship duration that fits your goals. All programs include 
+                        certificates, projects, and placement support.
+                    </p>
+                </div>
+
+                <div class="duration-grid">
+
+
+  
+
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1gwwrWjaeyiJTZ85VMG5JM2IyVT_BEVcv2s8JQ9HSXJ6GRQ/viewform" target="_blank" class="duration-card animate-on-scroll">
+                        <div class="duration-weeks">2</div>
+                        <div class="duration-label">Weeks</div>
+                       <div class="duration-btn">Apply Now <i class="fas fa-arrow-right"></i></div>
+                    </a>
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfE928icDfWXdf_BU84GuU8qHQfDkGLnv7RGvyzNQm2nHDmXw/viewform" target="_blank" class="duration-card animate-on-scroll">
+                        <div class="duration-weeks">4</div>
+                        <div class="duration-label">Weeks</div>
+                        <div class="duration-btn">Apply Now <i class="fas fa-arrow-right"></i></div>
+                    </a>
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSckT0DWPfGy6dILyK8NLYKOtdRX19wxxNxdLzRh1QuBSGsXFA/viewform" target="_blank" class="duration-card popular animate-on-scroll">
+                        <div class="duration-weeks">6</div>
+                        <div class="duration-label">Weeks (45 Days)</div>
+                        <div class="duration-btn">Apply Now <i class="fas fa-arrow-right"></i></div>
+                    </a>
+
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbti0PQs8FQugVsDS4lSe3QL947mqhdkEt1EmETNaSge9cGA/viewform" target="_blank" class="duration-card popular animate-on-scroll">
+                        <div class="duration-weeks">8</div>
+                        <div class="duration-label">Weeks (2 Month)</div>
+                        <div class="duration-btn">Apply Now <i class="fas fa-arrow-right"></i></div>
+                    </a>
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1SPnX_3PoJfNTtLHUARzYJPPjbRIcQtmiaMOPERywjuAFuw/viewform" target="_blank" class="duration-card animate-on-scroll">
+                        <div class="duration-weeks">12</div>
+                        <div class="duration-label">Weeks (3 Month)</div>
+                        <div class="duration-btn">Apply Now <i class="fas fa-arrow-right"></i></div>
+                    </a>
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScnotQMCL6518V8ajcLahWRLfzRu6xJiK8hBEAJYutfnBmGvw/viewform" target="_blank" class="duration-card animate-on-scroll">
+                        <div class="duration-weeks">16</div>
+                        <div class="duration-label">Weeks (4 Month)</div>
+                        <div class="duration-btn">Apply Now <i class="fas fa-arrow-right"></i></div>
+                    </a>
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScqZ-0SiGnGeRy2KgVlRT4EN4ARXLJPyERyPrgA3dNJW3y-iw/viewform" target="_blank" class="duration-card animate-on-scroll">
+                        <div class="duration-weeks">20</div>
+                        <div class="duration-label">Weeks (5 Month)</div>
+                        <div class="duration-btn">Apply Now <i class="fas fa-arrow-right"></i></div>
+                    </a>
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSck7LlGw2OjOV01DlOI6EKsdqBHTObUlAaHozF9bbJWacuSZA/viewform" target="_blank" class="duration-card animate-on-scroll">
+                        <div class="duration-weeks">24</div>
+                        <div class="duration-label">Weeks (6 Month)</div>
+                        <div class="duration-btn">Apply Now <i class="fas fa-arrow-right"></i></div>
+                    </a>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSe6KWReygR4BjEkdA8yPro9sM4UVqgE5V15mHzW6C5c9UaX7Q/viewform" target="_blank" class="duration-card popular animate-on-scroll">
+                        <div class="duration-weeks">Summer Internship</div>
+                        <div class="duration-label">(MAY - JUNE)</div>
+                        <div class="duration-btn">Apply Now <i class="fas fa-arrow-right"></i></div>
+                    </a>
+
+                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScGCulLwo5cAdKxho6CjRrW1k3g1FvADphQhR9Zxfsgq6h-SA/viewform" target="_blank" class="duration-card animate-on-scroll">
+                        <div class="duration-weeks">OUT OF INDIA</div>
+                        <div class="duration-label">4 - 24 Weeks</div>
+                        <div class="duration-btn">Apply Now <i class="fas fa-arrow-right"></i></div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Certificates Section -->
+    <section class="certificates" id="certificates">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-badge">
+                    <i class="fas fa-award"></i>
+                    Recognition
+                </span>
+                <h2 class="section-title">Verified Credentials</h2>
+                <p class="section-description">
+                    Receive professionally designed, QR-verified documents that validate your achievements.
+                </p>
+            </div>
+
+            <div class="certificates-grid">
+                <div class="certificate-card animate-on-scroll">
+                    <div class="certificate-preview certificate-preview1">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="certificate-title">Internship Offer Letter</h3>
+                    <span class="certificate-badge">
+                        <i class="fas fa-qrcode"></i>
+                        QR Verified
+                    </span>
+                </div>
+
+                <div class="certificate-card animate-on-scroll">
+                    <div class="certificate-preview">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="certificate-title">Completion Certificate</h3>
+                    <span class="certificate-badge">
+                        <i class="fas fa-qrcode"></i>
+                        QR Verified
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="https://internpe.in/" target="_blank" class="logo">
+                        <div class="logo-icon">IT</div>
+                        <div class="logo-text">INTERN<span>PE</span></div>
+                    </a>
+                    <p>
+                        Empowering the next generation of tech professionals through 
+                        hands-on internships and real-world experience.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/company/internpe/?viewAsMember=true" target="_blank" style="text-decoration: none;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/internpe2022?igshid=YmMyMTA2M2Y%3D" target="_blank" style="text-decoration: none;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.me/internshipinto" target="_blank" style="text-decoration: none;"><i class="fab fa-telegram"></i></a>
+                        <!-- <a href="#"><i class="fab fa-trustpilot"></i></a> -->
+                     <a href="https://www.trustpilot.com/review/internpe.in" target="_blank" style="text-decoration: none;">   <i class="fas fa-comments"></i> </a> 
+                    </div>
+                </div>
+
+                <!-- <div class="footer-column">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Machine Learning</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                         <li><a href="#">And Many More...</a></li>
+                    </ul>
+                </div> -->
+
+                <!-- <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div> -->
+
+                <!-- <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div> -->
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © <span id="year"></span> INTERNPE IT Solutions. All rights reserved.
+                </p>
+                <!-- <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookies</a>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+document.getElementById("year").textContent = "@" + new Date().getFullYear();
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-menu-list a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Animate on Scroll
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        animateElements.forEach(el => observer.observe(el));
+
+        // Category Tabs (basic interaction)
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
