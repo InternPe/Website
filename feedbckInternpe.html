@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InternPE - Student Video Testimonials</title>
+    <!-- Modern Sans-Serif Font Matching the Image Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Color Palette & Variables --- */
+        :root {
+            --primary-orange: #ff9900;
+            --primary-orange-hover: #e08800;
+            --orange-light-bg: #fff7ed;
+            --dark-navy: #0f172a;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --card-container-bg: #ffffff;
+            --border-color: #f1f5f9;
+        }
+
+        /* --- CSS Reset --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding-bottom: 5rem;
+        }
+
+        /* --- Header Navigation Bar --- */
+        .navbar {
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 5%;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--dark-navy);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-box {
+            background: linear-gradient(135deg, var(--primary-orange), #f59e0b);
+            color: #ffffff;
+            padding: 0.4rem 0.6rem;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .logo-text span {
+            color: var(--primary-orange);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.2s;
+        }
+
+        .nav-link.active {
+            background-color: var(--primary-orange);
+            color: #ffffff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
+        }
+
+        .nav-link:hover:not(.active) {
+            color: var(--primary-orange);
+        }
+
+        .verify-btn {
+            background-color: var(--dark-navy);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+
+        .verify-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* --- Main Frame Container (Matching the styled large card look) --- */
+        .main-container {
+            max-width: 1200px;
+            background-color: var(--card-container-bg);
+            margin: 3rem auto 0 auto;
+            border-radius: 32px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            padding: 4rem 2rem;
+        }
+
+        /* --- Hero/Intro Heading Section --- */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background-color: var(--orange-light-bg);
+            color: var(--primary-orange-hover);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-section h1 {
+            color: var(--primary-orange);
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-section h2 {
+            color: var(--dark-navy);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-section p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* --- Modern Video Grid --- */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        /* --- Elegant Video Card Components --- */
+        .video-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s;
+            position: relative;
+        }
+
+        /* The featured card concept from the banner theme */
+        .video-card.featured {
+            border: 2px solid var(--primary-orange);
+        }
+
+        .featured-tag {
+            position: absolute;
+            top: 0;
+            right: 2rem;
+            background-color: var(--primary-orange);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 0.3rem 0.8rem;
+            border-radius: 0 0 8px 8px;
+            z-index: 10;
+            text-transform: uppercase;
+        }
+
+        .video-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        .thumbnail-box {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            background-color: var(--dark-navy);
+            overflow: hidden;
+        }
+
+        .thumbnail-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .video-card:hover .thumbnail-box img {
+            transform: scale(1.04);
+        }
+
+        /* Modernized Play Action Overlay */
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(15, 23, 42, 0.15);
+            transition: background 0.3s;
+        }
+
+        .video-card:hover .play-overlay {
+            background: rgba(15, 23, 42, 0.3);
+        }
+
+        .play-btn {
+            width: 55px;
+            height: 55px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .play-btn::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
+            border-left: 14px solid var(--primary-orange);
+            margin-left: 4px;
+        }
+
+        .video-card:hover .play-btn {
+            transform: scale(1.1);
+            background-color: var(--primary-orange);
+        }
+
+        .video-card:hover .play-btn::after {
+            border-left-color: #ffffff;
+        }
+
+        /* Content Text Areas */
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .student-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 0.2rem;
+        }
+
+        .intern-domain {
+            font-size: 0.85rem;
+            color: var(--primary-orange-hover);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .feedback-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* --- Video Lightbox Modal Framework --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-window {
+            width: 90%;
+            max-width: 850px;
+            aspect-ratio: 16 / 9;
+            background: #000000;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.open .modal-window {
+            transform: scale(1);
+        }
+
+        .modal-window video {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .close-modal-btn {
+            position: absolute;
+            top: -3.5rem;
+            right: 0;
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 2rem;
+            cursor: pointer;
+            font-weight: 300;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 768px) {
+            .navbar { padding: 1rem 1.5rem; }
+            .nav-links { display: none; } /* Kept clean for single page look */
+            .main-container { margin: 1.5rem 1rem; padding: 2.5rem 1.2rem; border-radius: 20px; }
+            .hero-section h2 { font-size: 1.7rem; }
+            .hero-section h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Styled Navigation Header matching your logo element -->
+    <nav class="navbar">
+        <div class="logo-area">
+            <div class="logo-box">IT</div>
+            <div class="logo-text">INTERN<span>PE</span></div>
+        </div>
+        <div class="nav-links">
+            <a href="https://internpe.in/index.html" class="nav-link active">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-bottom:-2px;"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/></svg>
+                Home
+            </a>
+            <a href="https://internpe.in/ApplyInternship.html" target="_blank" class="nav-link"><b>Apply For Internship</b></a>
+        </div>
+        <a href="https://internpe.in/verify.html" target="_blank" class="verify-btn">Verify Your Certificate</a>
+    </nav>
+
+    <!-- Rounded Block Framing Base Component -->
+    <div class="main-container">
+        
+        <!-- Header Messaging -->
+        <section class="hero-section">
+            <div class="badge">
+                <span style="margin-right:4px;">🚀</span> Feedback Corner
+            </div>
+            <h1>Summer Internship</h1>
+            <h2>Reviews & Testimonials</h2>
+            <p>Hear straight from our past interns who upgraded their skills, built real-world projects, and secured professional placement paths.</p>
+        </section>
+
+        <!-- Dynamic Grid Architecture -->
+        <main class="video-grid">
+            
+            <!-- VIDEO CARD 1 (Featured Example) -->
+            <div class="video-card featured" data-video-src="./Feedback/peswaramma.mp4">
+                <div class="featured-tag">Most Popular</div>
+                <div class="thumbnail-box">
+                    <!-- Replace with student thumbnail image path -->
+                    <img src="./feedback/peswaramma.png" alt="Student Review Thumbnail">
+                    <div class="play-overlay">
+                        <div class="play-btn"></div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="student-title">Aman Verma</h3>
+                    <p class="intern-domain">Web Development Intern</p>
+                    <p class="feedback-text">"The structured task sheets and dedicated review sessions helped me land my first software engineering offer line."</p>
+                </div>
+            </div>
+
+            <!-- VIDEO CARD 2 -->
+            <div class="video-card" data-video-src="./feedback/meghana.mp4">
+                <div class="thumbnail-box">
+                    <img src="./feedback/meghna.png" alt="Student Review Thumbnail">
+                    <div class="play-overlay">
+                        <div class="play-btn"></div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="student-title">Riya Sharma</h3>
+                    <p class="intern-domain">UI/UX Design Track</p>
+                    <p class="feedback-text">"Creating case studies side-by-side with industry briefs gave me a massive portfolio edge over my college peers."</p>
+                </div>
+            </div>
+
+            <!-- VIDEO CARD 3 -->
+            <div class="video-card" data-video-src="./feedback/AHALYACHILUKURI .mp4">
+                <div class="thumbnail-box">
+                    <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&auto=format&fit=crop&q=80" alt="Student Review Thumbnail">
+                    <div class="play-overlay">
+                        <div class="play-btn"></div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="student-title">Devansh Patel</h3>
+                    <p class="intern-domain">Data Science Intern</p>
+                    <p class="feedback-text">"From clean data parsing pipelines to model training modules, the tasks pushed me out of my absolute comfort zone."</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Lightbox Playback Overlay System -->
+    <div class="modal-overlay" id="videoModal">
+        <div class="modal-window">
+            <button class="close-modal-btn" id="closeModalBtn">&times;</button>
+            <video id="modalVideoElement" controls controlsList="nodownload"></video>
+        </div>
+    </div>
+
+    <!-- JavaScript Actions Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoCards = document.querySelectorAll('.video-card');
+            const videoModal = document.getElementById('videoModal');
+            const modalVideoElement = document.getElementById('modalVideoElement');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+
+            // Opens Lightbox modal dynamically based on clicked card attributes
+            videoCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const videoUrl = card.getAttribute('data-video-src');
+                    if (videoUrl) {
+                        modalVideoElement.src = videoUrl;
+                        videoModal.classList.add('open');
+                        modalVideoElement.play();
+                    }
+                });
+            });
+
+            // Action to safely stop and close modal
+            const shutdownModal = () => {
+                videoModal.classList.remove('open');
+                modalVideoElement.pause();
+                modalVideoElement.src = "";
+            };
+
+            closeModalBtn.addEventListener('click', shutdownModal);
+
+            // Close when user clicks anywhere outside video window frame
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) {
+                    shutdownModal();
+                }
+            });
+
+            // Accessibility layout setup (ESC key closures)
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && videoModal.classList.contains('open')) {
+                    shutdownModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
