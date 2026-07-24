@@ -351,12 +351,12 @@
         .modal-overlay.open .modal-window {
             transform: scale(1);
         }
-
-        .modal-window video {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
+.modal-window iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+}
 
         .close-modal-btn {
             position: absolute;
@@ -413,27 +413,31 @@
 
         <!-- Dynamic Grid Architecture -->
         <main class="video-grid">
+
+<!-- VIDEO CARD 1 (Featured Example) -->
+<div class="video-card featured"
+data-video-src="https://www.youtube.com/embed/2FHHl5PQ_Jg">
+<div class="featured-tag">Most Popular</div>
+
+    <div class="thumbnail-box">
+        <img src="./feedbackfile/Ritu Raturi.png" alt="Student Review Thumbnail">
+        <div class="play-overlay">
+            <div class="play-btn"></div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <h3 class="student-title">RITU RATURI</h3>
+        <p class="intern-domain">C++ Intern</p>
+        <p class="feedback-text">Uttaranchal University</p>
+    </div>
+</div>
+
             
-            <!-- VIDEO CARD 1 (Featured Example) -->
-            <div class="video-card featured" data-video-src="./feedbackfile/Ritu Raturi.mp4">
-                <div class="featured-tag">Most Popular</div>
-                <div class="thumbnail-box">
-                    <!-- Replace with student thumbnail image path -->
-                    <img src="./feedbackfile/Ritu Raturi.png" alt="Student Review Thumbnail">
-                    <div class="play-overlay">
-                        <div class="play-btn"></div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h3 class="student-title">RITU RATURI</h3>
-                    <p class="intern-domain">C++ Intern Intern</p>
-                    <p class="feedback-text">Uttaranchal University</p>
-                </div>
-            </div>
 
             <!-- VIDEO CARD 2 -->
-            <div class="video-card" data-video-src="./feedbackfile/Badareesh P.mp4">
-                <div class="thumbnail-box">
+<div class="video-card featured"
+data-video-src="https://www.youtube.com/embed/03wVFeEy4t0">                <div class="thumbnail-box">
                     <img src="./feedbackfile/Badareesh P.png" alt="Student Review Thumbnail">
                     <div class="play-overlay">
                         <div class="play-btn"></div>
@@ -447,8 +451,8 @@
             </div>
 
             <!-- VIDEO CARD 3 -->
-            <div class="video-card" data-video-src="./feedbackfile/Preksha jain.mp4">
-                <div class="thumbnail-box">
+<div class="video-card featured"
+data-video-src="https://www.youtube.com/embed/tIcqZX2GmRA">                  <div class="thumbnail-box">
                     <img src="./feedbackfile/Preksha Jain.png" alt="Student Review Thumbnail">
                     <div class="play-overlay">
                         <div class="play-btn"></div>
@@ -462,9 +466,9 @@
             </div>
 
 
-   <div class="video-card" data-video-src="./feedbackfile/ABHISHEK KUMAR.mp4">
-                <div class="thumbnail-box">
-                    <img src="./feedbackfile/ABHISHEKKUMAR.png" alt="Student Review Thumbnail">
+<div class="video-card featured"
+data-video-src="https://www.youtube.com/embed/MHCRZ4TyOcA">                    <div class="thumbnail-box">
+                    <img src="./feedbackfile/ABHISHEK KUMAR.png" alt="Student Review Thumbnail">
                     <div class="play-overlay">
                         <div class="play-btn"></div>
                     </div>
@@ -479,8 +483,8 @@
 
 
 
-               <div class="video-card" data-video-src="./feedbackfile/NISHTHA.mp4">
-                <div class="thumbnail-box">
+<div class="video-card featured"
+data-video-src="https://www.youtube.com/embed/fmXvjEQ914s">                    <div class="thumbnail-box">
                     <img src="./feedbackfile/NISHTHA.png" alt="Student Review Thumbnail">
                     <div class="play-overlay">
                         <div class="play-btn"></div>
@@ -496,8 +500,8 @@
 
 
 
-               <div class="video-card" data-video-src="./feedbackfile/PRANATI R SAVADATTI.mp4">
-                <div class="thumbnail-box">
+<div class="video-card featured"
+data-video-src="https://www.youtube.com/embed/rPFD8ida6Pk">                    <div class="thumbnail-box">
                     <img src="./feedbackfile/PRANATI R SAVADATTI .png" alt="Student Review Thumbnail">
                     <div class="play-overlay">
                         <div class="play-btn"></div>
@@ -520,53 +524,76 @@
     <div class="modal-overlay" id="videoModal">
         <div class="modal-window">
             <button class="close-modal-btn" id="closeModalBtn">&times;</button>
-            <video id="modalVideoElement" controls controlsList="nodownload"></video>
+<iframe
+    id="modalVideoElement"
+    width="100%"
+    height="100%"
+    src=""
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+</iframe>
         </div>
     </div>
 
     <!-- JavaScript Actions Logic -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const videoCards = document.querySelectorAll('.video-card');
-            const videoModal = document.getElementById('videoModal');
-            const modalVideoElement = document.getElementById('modalVideoElement');
-            const closeModalBtn = document.getElementById('closeModalBtn');
+            document.addEventListener('DOMContentLoaded', () => {
 
-            // Opens Lightbox modal dynamically based on clicked card attributes
-            videoCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    const videoUrl = card.getAttribute('data-video-src');
-                    if (videoUrl) {
-                        modalVideoElement.src = videoUrl;
-                        videoModal.classList.add('open');
-                        modalVideoElement.play();
-                    }
-                });
-            });
+    const videoCards = document.querySelectorAll('.video-card');
+    const videoModal = document.getElementById('videoModal');
+    const modalVideoElement = document.getElementById('modalVideoElement');
+    const closeModalBtn = document.getElementById('closeModalBtn');
 
-            // Action to safely stop and close modal
-            const shutdownModal = () => {
-                videoModal.classList.remove('open');
-                modalVideoElement.pause();
-                modalVideoElement.src = "";
-            };
+    videoCards.forEach(card => {
 
-            closeModalBtn.addEventListener('click', shutdownModal);
+        card.addEventListener('click', () => {
 
-            // Close when user clicks anywhere outside video window frame
-            videoModal.addEventListener('click', (e) => {
-                if (e.target === videoModal) {
-                    shutdownModal();
-                }
-            });
+            let videoUrl = card.getAttribute('data-video-src');
 
-            // Accessibility layout setup (ESC key closures)
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && videoModal.classList.contains('open')) {
-                    shutdownModal();
-                }
-            });
+            if (videoUrl.includes("youtube.com/embed")) {
+                videoUrl += "?autoplay=1";
+            }
+
+            modalVideoElement.src = videoUrl;
+
+            videoModal.classList.add('open');
+
         });
+
+    });
+
+    function shutdownModal() {
+
+        videoModal.classList.remove('open');
+
+        modalVideoElement.src = "";
+
+    }
+
+    closeModalBtn.addEventListener('click', shutdownModal);
+
+    videoModal.addEventListener('click', (e) => {
+
+        if (e.target === videoModal) {
+
+            shutdownModal();
+
+        }
+
+    });
+
+    document.addEventListener('keydown', (e) => {
+
+        if (e.key === "Escape") {
+
+            shutdownModal();
+
+        }
+
+    });
+
+});
     </script>
 </body>
 </html>
