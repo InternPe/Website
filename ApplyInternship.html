@@ -1085,6 +1085,49 @@
             margin: 0 auto;
         }
 
+
+        /* RED NEWLY ADDED BADGE */
+.newly-added-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    margin-left: 4px;
+    background: linear-gradient(135deg, #ef4444, #dc2626, #b91c1c);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    border-radius: 50px;
+    white-space: nowrap;
+    box-shadow: 0 3px 12px rgba(220, 38, 38, 0.35);
+    animation: newBadgePulse 2s infinite;
+}
+
+.newly-added-badge .new-dot {
+    width: 6px;
+    height: 6px;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: newDotBlink 1s infinite;
+}
+
+@keyframes newBadgePulse {
+    0%, 100% {
+        box-shadow: 0 3px 10px rgba(220, 38, 38, 0.3);
+    }
+    50% {
+        box-shadow: 0 3px 18px rgba(220, 38, 38, 0.65);
+    }
+}
+
+
+
+
+
+
+        
+
         @media (min-width: 640px) {
             .duration-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1357,7 +1400,19 @@
                     <!-- <li><a href="#positions"><i class="fas fa-briefcase"></i> Positions</a></li> -->
                     <!-- <li><a href="#offers"><i class="fas fa-gift"></i> Benefits</a></li> -->
                     <li><a href="#certificates"><i class="fas fa-certificate"></i> Certificates</a></li>
-                   <li><a href="https://internpe.in/feedbckInternpe.html" target="_blank"> <i class="fas fa-paper-plane"></i> Internpe Reviews 4.5+⭐ </a></li>
+
+                <li>
+    <a href="https://internpe.in/feedbckInternpe.html" target="_blank">
+        <i class="fas fa-paper-plane"></i>
+        Internpe Reviews 4.6+⭐
+    </a>
+
+    <span class="newly-added-badge">
+        <span class="new-dot"></span>
+        NEWLY ADDED
+    </span>
+</li>
+                    
                 </ul>
 
                 <a href="https://internpe.in/verify.html" class="nav-cta">Verify Your Certificate</a>
@@ -1378,8 +1433,18 @@
             <!-- <li><a href="#positions"><i class="fas fa-briefcase"></i> Positions</a></li>
             <li><a href="#offers"><i class="fas fa-gift"></i> Benefits</a></li> -->
             <li><a href="#certificates"><i class="fas fa-certificate"></i> Certificates</a></li>
-  <li><a href="https://internpe.in/feedbckInternpe.html" target="_blank"> <i class="fas fa-paper-plane"></i> Internpe Reviews 4.6+⭐ </a></li>
 
+            <li>
+    <a href="https://internpe.in/feedbckInternpe.html" target="_blank">
+        <i class="fas fa-paper-plane"></i>
+        Internpe Reviews 4.6+⭐
+    </a>
+
+    <span class="newly-added-badge">
+        <span class="new-dot"></span>
+        NEWLY ADDED
+    </span>
+</li>
             <li><a href="#apply"><i class="fas fa-paper-plane"></i> Apply Now</a></li>
         </ul>
         <!-- <a href="#apply" class="mobile-menu-cta">Start Your Journey</a> -->
