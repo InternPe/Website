@@ -1121,10 +1121,27 @@
     }
 }
 
+.nav-menu li:has(.newly-added-badge) {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-menu li:has(.newly-added-badge) .newly-added-badge {
+    margin-left: 0;
+    padding: 4px 8px;
+    font-size: 9px;
+    flex-shrink: 0;
+}
 
 
-
-
+@media (max-width: 767px) {
+    .mobile-menu-list li:has(.newly-added-badge) {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
 
         
 
